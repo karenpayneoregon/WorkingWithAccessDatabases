@@ -14,7 +14,7 @@
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        '
+        'https://forums.asp.net/t/2021979.aspx?Problems+connecting+to+DB+via+OleDB
         ' See the following
         ' https://github.com/karenpayneoregon/SecureConnectionStringsVisualBasic
         '

@@ -1,6 +1,6 @@
 ﻿Imports System.Data.OleDb
 
-Public Class AccessConnection
+Public MustInherit Class AccessConnection
     Inherits BaseExceptionProperties
     Implements IConnection
 

@@ -64,6 +64,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectionClasses\AccessConnection.vb" />
+    <Compile Include="Converters\DataTableToClassList.vb" />
+    <Compile Include="DataHelpers\CommandPeeker.vb" />
     <Compile Include="GeneralClasses\BaseExceptionProperties.vb" />
     <Compile Include="ConnectionClasses\BaseSqlServerConnection.vb" />
     <Compile Include="ListenerClasses\BroadcasterClass.vb" />

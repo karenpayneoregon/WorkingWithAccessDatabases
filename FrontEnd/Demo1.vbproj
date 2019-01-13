@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\ExtensionMethods.vb" />
+    <Compile Include="Classes\HelperModule.vb" />
     <Compile Include="Classes\MyDialogs.vb" />
     <Compile Include="Forms\Editor.Designer.vb">
       <DependentUpon>Editor.vb</DependentUpon>
@@ -124,7 +125,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

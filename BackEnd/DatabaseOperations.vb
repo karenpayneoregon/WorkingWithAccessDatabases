@@ -1,4 +1,5 @@
 ﻿Imports System.Data.OleDb
+Imports System.IO
 Imports KarensBaseClasses
 
 Public Class DatabaseOperations
@@ -11,7 +12,7 @@ Public Class DatabaseOperations
     ''' Not used in the code sample but this is how to do a connection not encrypted.
     ''' </remarks>
     Public Sub New()
-        DefaultCatalog = IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Database1.accdb")
+        DefaultCatalog = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Database1.accdb")
     End Sub
     ''' <summary>
     ''' Test the connection before attempting to interact with the ms-access database.
@@ -52,8 +53,8 @@ Public Class DatabaseOperations
                             CompanyName, 
                             ContactName, 
                             ContactTitle
-                        FROM Customer ORDER BY CompanyName;
-
+                        FROM Customer 
+                        ORDER BY CompanyName;
                     </SQL>.Value
 
                 Dim dt As New DataTable With {.TableName = "Customer"}
@@ -223,7 +224,7 @@ Public Class DatabaseOperations
     ''' <param name="pRow"></param>
     ''' <returns>True if update was successful, false if unsuccessful</returns>
     ''' <remarks>
-    ''' I used Parameters.Add instead of Parameters.AddWithValue
+    ''' Parameters.Add instead of Parameters.AddWithValue
     ''' where Parameters.AddWithValue is usually best yet wanted to
     ''' show Parameters.Add as many don't realize this is a viable
     ''' way to add parameters and really shines when doing multiple
