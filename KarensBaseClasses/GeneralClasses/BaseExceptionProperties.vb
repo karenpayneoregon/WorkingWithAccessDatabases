@@ -1,4 +1,6 @@
-﻿Public Class BaseExceptionProperties
+﻿Imports System.Data.OleDb
+
+Public Class BaseExceptionProperties
 
     Protected mHasException As Boolean
     ''' <summary>
@@ -28,6 +30,20 @@
     Public ReadOnly Property LastExceptionMessage As String
         Get
             Return mLastException.Message
+        End Get
+    End Property
+    Public ReadOnly Property HasOleDbException() As Boolean
+        Get
+            If LastException IsNot Nothing Then
+                Return TypeOf LastException Is OleDbException
+            Else
+                Return False
+            End If
+        End Get
+    End Property
+    Public ReadOnly Property OleDbException() As OleDbException
+        Get
+            Return CType(LastException, OleDbException)
         End Get
     End Property
     ''' <summary>

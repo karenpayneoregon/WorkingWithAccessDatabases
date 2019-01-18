@@ -1,10 +1,10 @@
 ﻿Public Class OleDbHelpers
     ''' <summary>
-    ''' Determine if OleDb data provider is installed from 2007 + products such as
-    ''' MS-Access, MS-Excel
+    ''' Determine if OleDb data provider is installed from 2007 + products such as MS-Access, MS-Excel
     ''' </summary>
-    ''' <returns></returns>
+    ''' <returns>True if OleDb provider is installed, False if not installed</returns>
     Public Function IsOleDbProviderInstalled() As Boolean
+
         Dim providerInstalled = (New OleDb.OleDbEnumerator()).
                 GetElements().AsEnumerable().
                 FirstOrDefault(
@@ -17,5 +17,6 @@
         Else
             Return False
         End If
+
     End Function
 End Class
