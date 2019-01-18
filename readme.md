@@ -9,6 +9,7 @@ This is a work in progress.
 - Secure connections [repository](https://github.com/karenpayneoregon/SecureConnectionStringsVisualBasic).
 - Adding records in batch.
 - Utilizing transactions.
+- Interacting with blob fields.
 - Working with data readers.
 
 ### Requires
