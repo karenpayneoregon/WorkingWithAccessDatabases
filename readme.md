@@ -11,6 +11,7 @@ This is a work in progress.
 - Utilizing transactions.
 - Interacting with blob fields.
 - Working with data readers.
+- Master/Details relations.
 
 ### Requires
 - Microsoft Visual Studio (written in 2017)

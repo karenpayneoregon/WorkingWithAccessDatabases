@@ -64,6 +64,7 @@ Public Class DatabaseOperations
                     dt.Load(cmd.ExecuteReader)
                     dt.Columns("Identifier").ColumnMapping = MappingType.Hidden
                     dt.Columns("Process").ColumnMapping = MappingType.Hidden
+                    dt.Columns("CompanyName").AllowDBNull = False
 
                 Catch ex As Exception
                     mHasException = True

@@ -36,7 +36,6 @@
                 DataGridView1.AllowUserToAddRows = False
                 DataGridView1.DataSource = bsCustomers
 
-
                 DataGridView1.Columns("CompanyName").HeaderText = "Company"
                 DataGridView1.Columns("ContactName").HeaderText = "Contact"
 
@@ -46,7 +45,8 @@
             End If
         Else
             '
-            ' See Shown event.
+            ' See Shown event which checks to see if there are issues. Why? because showing issues here the form is not yet displayed.
+            ' Should the operations here be placed in the shown event? Sure, these operations can reside in this event or shown event.
             '
         End If
 
@@ -62,7 +62,7 @@
             MessageBox.Show($"Failed to load data: {ops.LastExceptionMessage}")
         End If
     End Sub
-    Private Sub cmdClose_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdClose.Click
+    Private Sub cmdClose_Click(sender As System.Object, e As EventArgs) Handles cmdClose.Click
         Close()
     End Sub
 End Class
