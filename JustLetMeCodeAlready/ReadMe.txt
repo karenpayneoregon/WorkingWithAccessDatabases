@@ -1,0 +1,1 @@
+﻿This project shows one version of what a new developer might try to write code for interacting with MS-Access.
