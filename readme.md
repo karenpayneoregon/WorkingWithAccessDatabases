@@ -12,6 +12,9 @@ This is a work in progress.
 - Interacting with blob fields.
 - Working with data readers.
 - Master/Details relations.
+- CRUD operations.
+- DataGridView control considerations.
+- Database design.
 
 ### Requires
 - Microsoft Visual Studio (written in 2017)
