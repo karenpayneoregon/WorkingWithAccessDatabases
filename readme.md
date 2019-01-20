@@ -14,6 +14,7 @@ This is a work in progress.
 - Master/Details relations.
 - CRUD operations.
 - DataGridView control considerations.
+- Data binding control considerations.
 - Database design.
 
 ### Requires
