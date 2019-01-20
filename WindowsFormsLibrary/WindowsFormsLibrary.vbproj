@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9DED29F3-8DCE-4E97-B051-F801E630A455}</ProjectGuid>
+    <ProjectGuid>{AA42449A-2596-49EF-B4A9-662198D4E23F}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>KarensBaseClasses</RootNamespace>
-    <AssemblyName>KarensBaseClasses</AssemblyName>
+    <RootNamespace>WindowsFormsLibrary</RootNamespace>
+    <AssemblyName>WindowsFormsLibrary</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -18,7 +19,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>KarensBaseClasses.xml</DocumentationFile>
+    <DocumentationFile>WindowsFormsLibrary.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -27,7 +28,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>KarensBaseClasses.xml</DocumentationFile>
+    <DocumentationFile>WindowsFormsLibrary.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -37,7 +38,7 @@
     <OptionCompare>Binary</OptionCompare>
   </PropertyGroup>
   <PropertyGroup>
-    <OptionStrict>Off</OptionStrict>
+    <OptionStrict>On</OptionStrict>
   </PropertyGroup>
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
@@ -45,6 +46,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -63,17 +65,9 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConnectionClasses\AccessConnection.vb" />
-    <Compile Include="Converters\DataTableToClassList.vb" />
-    <Compile Include="DataHelpers\CommandPeeker.vb" />
-    <Compile Include="DataHelpers\OleDbHelpers.vb" />
-    <Compile Include="Filtering\RowFilterBuilder.vb" />
-    <Compile Include="GeneralClasses\BaseExceptionProperties.vb" />
-    <Compile Include="ConnectionClasses\BaseSqlServerConnection.vb" />
-    <Compile Include="ListenerClasses\BroadcasterClass.vb" />
-    <Compile Include="ListenerClasses\Factory.vb" />
-    <Compile Include="ListenerClasses\IListener.vb" />
-    <Compile Include="Interfaces\IConnection.vb" />
+    <Compile Include="Class1.vb" />
+    <Compile Include="Extensions\BindingSourceExtensions.vb" />
+    <Compile Include="Extensions\StringExtensions.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -109,6 +103,5 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
