@@ -44,6 +44,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DatabaseTableDesignConsider
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ControlConsiderationsForDataGridView", "ControlConsiderationsForDataGridView\ControlConsiderationsForDataGridView.vbproj", "{09C9E361-A13C-4704-AF68-E240C60A92F3}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ControlConsiderationsGeneral", "ControlConsiderationsGeneral\ControlConsiderationsGeneral.vbproj", "{3D2817FB-2D3F-4386-9CB0-5F46C049BB84}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -179,6 +181,14 @@ Global
 		{09C9E361-A13C-4704-AF68-E240C60A92F3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{09C9E361-A13C-4704-AF68-E240C60A92F3}.Release|x86.ActiveCfg = Release|Any CPU
 		{09C9E361-A13C-4704-AF68-E240C60A92F3}.Release|x86.Build.0 = Release|Any CPU
+		{3D2817FB-2D3F-4386-9CB0-5F46C049BB84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D2817FB-2D3F-4386-9CB0-5F46C049BB84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D2817FB-2D3F-4386-9CB0-5F46C049BB84}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3D2817FB-2D3F-4386-9CB0-5F46C049BB84}.Debug|x86.Build.0 = Debug|Any CPU
+		{3D2817FB-2D3F-4386-9CB0-5F46C049BB84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D2817FB-2D3F-4386-9CB0-5F46C049BB84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D2817FB-2D3F-4386-9CB0-5F46C049BB84}.Release|x86.ActiveCfg = Release|Any CPU
+		{3D2817FB-2D3F-4386-9CB0-5F46C049BB84}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -200,6 +210,7 @@ Global
 		{03DA4FE2-47A8-4078-B70F-47D75E2A5D44} = {085C30FB-D89A-4434-ABF9-CCF12C828B75}
 		{4628C63B-E05C-4B10-94D1-D3A028920FED} = {085C30FB-D89A-4434-ABF9-CCF12C828B75}
 		{09C9E361-A13C-4704-AF68-E240C60A92F3} = {085C30FB-D89A-4434-ABF9-CCF12C828B75}
+		{3D2817FB-2D3F-4386-9CB0-5F46C049BB84} = {085C30FB-D89A-4434-ABF9-CCF12C828B75}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FAB3340A-360D-4095-BFAA-D12BEF771292}
