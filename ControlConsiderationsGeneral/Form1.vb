@@ -29,7 +29,8 @@
     ''' </summary>
     Private Sub HandleTitleChanged()
         employeeTitleComboBox.SelectedIndex = employeeTitleComboBox.EmployeeTitles().
-            FirstOrDefault(Function(data) data.EmployeeTitleId = bsEmployees.CurrentEmployeeTitleIdentifier).EmployeeTitleId - 1
+            FirstOrDefault(Function(data) data.EmployeeTitleId =
+                bsEmployees.CurrentEmployeeTitleIdentifier).EmployeeTitleId - 1
     End Sub
     Private Sub EmployeesBindingSourcePositionChanged(sender As Object, e As EventArgs)
         HandleTitleChanged()

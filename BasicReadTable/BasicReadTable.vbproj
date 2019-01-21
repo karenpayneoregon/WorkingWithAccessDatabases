@@ -74,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\DatabaseOperations.vb" />
+    <Compile Include="Classes\MyDialogs.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
