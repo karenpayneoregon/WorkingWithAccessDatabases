@@ -64,11 +64,16 @@ Public Class DataOperations
                 cmd.Parameters("@Incorporated").Value = incorporated
 
                 cmd.ExecuteNonQuery()
+
                 cmd.CommandText = "Select @@Identity"
                 pIdentfier = CInt(cmd.ExecuteScalar)
+
                 transaction.Commit()
+
             Catch oleDbException As OleDbException
+
                 transaction.Rollback()
+
                 mHasException = True
                 mLastException = oleDbException
             Catch ex As Exception

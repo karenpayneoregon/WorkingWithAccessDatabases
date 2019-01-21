@@ -9,8 +9,8 @@
         ''' <returns></returns>
         ''' <remarks></remarks>
         <Runtime.CompilerServices.Extension()>
-        Public Function ActualCommandTextByNames(ByVal sender As IDbCommand, Optional token As String = "@") As String
-            Dim sb As New System.Text.StringBuilder(sender.CommandText)
+        Public Function ActualCommandTextByNames(sender As IDbCommand, Optional token As String = "@") As String
+            Dim sb As New Text.StringBuilder(sender.CommandText)
             Dim emptyParameterNames = (From T In sender.Parameters.Cast(Of IDataParameter)() Where String.IsNullOrWhiteSpace(T.ParameterName)).FirstOrDefault
 
             If emptyParameterNames IsNot Nothing Then
