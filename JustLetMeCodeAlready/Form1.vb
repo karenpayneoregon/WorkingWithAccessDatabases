@@ -1,9 +1,10 @@
 ﻿Imports System.Data.OleDb
+Imports System.IO
 
 Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        Dim connectionString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Dotnet_Development\VS2017\MSDN_Access1\ControlConsiderationsGeneral\bin\Debug\Database1.accdb"
+        Dim connectionString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Dotnet_Development\VS2017\MSDN_Access1\JustLetMeCodeAlready\bin\Debug\Database1.accdb"
 
         Using cn As New OleDbConnection(connectionString)
             Using cmd As New OleDbCommand With {.Connection = cn}
@@ -30,7 +31,7 @@ Public Class Form1
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim connectionString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Dotnet_Development\VS2017\MSDN_Access1\ControlConsiderationsGeneral\bin\Debug\Database1.accdb"
+        Dim connectionString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Dotnet_Development\VS2017\MSDN_Access1\JustLetMeCodeAlready\bin\Debug\Database1.accdb"
 
         Using cn As New OleDbConnection(connectionString)
             Using cmd As New OleDbCommand With {.Connection = cn}
@@ -49,11 +50,7 @@ Public Class Form1
             End Using
         End Using
     End Sub
-    ''' <summary>
-    ''' Better but doing too much work
-    ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
+
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim connectionString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Dotnet_Development\VS2017\MSDN_Access1\JustLetMeCodeAlready\bin\Debug\Database1.accdb"
 
@@ -74,5 +71,8 @@ Public Class Form1
                 End Try
             End Using
         End Using
+    End Sub
+    Private Sub closeButton_Click(sender As Object, e As EventArgs) Handles closeButton.Click
+        Close()
     End Sub
 End Class
