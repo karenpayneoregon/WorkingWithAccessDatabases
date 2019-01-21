@@ -50,6 +50,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "WindowsFormsLibrary", "Wind
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "JustLetMeCodeAlready", "JustLetMeCodeAlready\JustLetMeCodeAlready.vbproj", "{C40C9C39-5AE3-4EE1-8986-43C465B3B2D2}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BasicReadTable", "BasicReadTable\BasicReadTable.vbproj", "{21C6F1BE-4D98-414D-AB38-A70D8DCF2FF9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -209,6 +211,14 @@ Global
 		{C40C9C39-5AE3-4EE1-8986-43C465B3B2D2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C40C9C39-5AE3-4EE1-8986-43C465B3B2D2}.Release|x86.ActiveCfg = Release|Any CPU
 		{C40C9C39-5AE3-4EE1-8986-43C465B3B2D2}.Release|x86.Build.0 = Release|Any CPU
+		{21C6F1BE-4D98-414D-AB38-A70D8DCF2FF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21C6F1BE-4D98-414D-AB38-A70D8DCF2FF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21C6F1BE-4D98-414D-AB38-A70D8DCF2FF9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{21C6F1BE-4D98-414D-AB38-A70D8DCF2FF9}.Debug|x86.Build.0 = Debug|Any CPU
+		{21C6F1BE-4D98-414D-AB38-A70D8DCF2FF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21C6F1BE-4D98-414D-AB38-A70D8DCF2FF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21C6F1BE-4D98-414D-AB38-A70D8DCF2FF9}.Release|x86.ActiveCfg = Release|Any CPU
+		{21C6F1BE-4D98-414D-AB38-A70D8DCF2FF9}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -233,6 +243,7 @@ Global
 		{3D2817FB-2D3F-4386-9CB0-5F46C049BB84} = {085C30FB-D89A-4434-ABF9-CCF12C828B75}
 		{AA42449A-2596-49EF-B4A9-662198D4E23F} = {E3F496A4-871B-4A80-84FA-75C7EF2F0E5D}
 		{C40C9C39-5AE3-4EE1-8986-43C465B3B2D2} = {085C30FB-D89A-4434-ABF9-CCF12C828B75}
+		{21C6F1BE-4D98-414D-AB38-A70D8DCF2FF9} = {085C30FB-D89A-4434-ABF9-CCF12C828B75}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FAB3340A-360D-4095-BFAA-D12BEF771292}
