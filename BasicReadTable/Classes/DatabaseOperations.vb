@@ -64,4 +64,22 @@ Public Class DatabaseOperations
             End Using
         End Using
     End Function
+    Public Sub RemoveCustomer(customerKey As Integer)
+
+        Using cn As New OleDbConnection(ConnectionString)
+            Using cmd As New OleDbCommand With {.Connection = cn}
+                cmd.CommandText = "DELETE FROM Customers WHERE Identifier = ?"
+                cmd.Parameters.AddWithValue("?", customerKey)
+                Try
+                    cn.Open()
+                    cmd.ExecuteNonQuery()
+                Catch ex As Exception
+                    mHasException = True
+                    mLastException = ex
+                End Try
+
+            End Using
+        End Using
+
+    End Sub
 End Class

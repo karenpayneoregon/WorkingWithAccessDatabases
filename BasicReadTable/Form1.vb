@@ -14,7 +14,12 @@
         End If
 
     End Sub
-    Private Sub BindingNavigatorDeleteItem_Click(sender As Object, e As EventArgs) Handles BindingNavigatorDeleteItem.Click
+    Private Sub BindingNavigatorDeleteItem_Click(sender As Object, e As EventArgs) _
+        Handles BindingNavigatorDeleteItem.Click
 
+        If My.Dialogs.Question($"Remove '{bsCustomers.CurrentRow().Field(Of String)("CompanyName")}'?") Then
+            Dim ops As New DatabaseOperations
+            ops.RemoveCustomer(bsCustomers.CurrentRow().Field(Of Integer)("Identifier"))
+        End If
     End Sub
 End Class
