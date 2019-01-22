@@ -15,6 +15,21 @@ Public Class DatabaseOperations
         DefaultCatalog = Path.Combine(
             AppDomain.CurrentDomain.BaseDirectory, "Database1.accdb")
     End Sub
+    Public Function LoadCompanyNames() As List(Of String)
+        Dim nameList As New List(Of String)
+        Using cn As New OleDbConnection(ConnectionString)
+            Console.WriteLine(ConnectionString)
+            Using cmd As New OleDbCommand With {.Connection = cn}
+                cmd.CommandText = "SELECT  CompanyName FROM Customers"
+                cn.Open()
+                Dim reader = cmd.ExecuteReader()
+                While reader.Read()
+                    nameList.Add(reader.GetString(0))
+                End While
+            End Using
+        End Using
+        Return nameList
+    End Function
     ''' <summary>
     ''' Read customers from database into a DataTable
     ''' </summary>
@@ -64,6 +79,7 @@ Public Class DatabaseOperations
             End Using
         End Using
     End Function
+
     Public Sub RemoveCustomer(customerKey As Integer)
 
         Using cn As New OleDbConnection(ConnectionString)

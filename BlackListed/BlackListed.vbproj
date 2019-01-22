@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{21C6F1BE-4D98-414D-AB38-A70D8DCF2FF9}</ProjectGuid>
+    <ProjectGuid>{859C2944-FA48-41DD-BDF1-5496BD3B8A29}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>BasicReadTable.My.MyApplication</StartupObject>
-    <RootNamespace>BasicReadTable</RootNamespace>
-    <AssemblyName>BasicReadTable</AssemblyName>
+    <StartupObject>BlackListed.My.MyApplication</StartupObject>
+    <RootNamespace>BlackListed</RootNamespace>
+    <AssemblyName>BlackListed</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -22,7 +22,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>BasicReadTable.xml</DocumentationFile>
+    <DocumentationFile>BlackListed.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -32,7 +32,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>BasicReadTable.xml</DocumentationFile>
+    <DocumentationFile>BlackListed.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -73,15 +73,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\DatabaseOperations.vb" />
-    <Compile Include="Classes\MyDialogs.vb" />
-    <Compile Include="Extensions\BindingSourceExtensions.vb" />
-    <Compile Include="FilterForm.Designer.vb">
-      <DependentUpon>FilterForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FilterForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="DataOperations.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -106,9 +98,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FilterForm.resx">
-      <DependentUpon>FilterForm.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
@@ -135,6 +124,7 @@
     <Content Include="Database1.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Readme.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KarensBaseClasses\KarensBaseClasses.vbproj">
