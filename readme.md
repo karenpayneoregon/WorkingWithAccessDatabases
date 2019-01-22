@@ -16,6 +16,8 @@ This is a work in progress.
 - DataGridView control considerations.
 - Data binding control considerations.
 - Database design.
+- Searching.
+- Query optimization for specific task.
 
 ### Requires
 - Microsoft Visual Studio (written in 2017)
