@@ -33,7 +33,7 @@ Partial Class Form1
         Me.userNameTextBox.Name = "userNameTextBox"
         Me.userNameTextBox.Size = New System.Drawing.Size(181, 20)
         Me.userNameTextBox.TabIndex = 0
-        Me.userNameTextBox.Text = "karenp"
+        Me.userNameTextBox.Text = "dannyj"
         '
         'fullNameTextBox
         '
@@ -41,7 +41,7 @@ Partial Class Form1
         Me.fullNameTextBox.Name = "fullNameTextBox"
         Me.fullNameTextBox.Size = New System.Drawing.Size(181, 20)
         Me.fullNameTextBox.TabIndex = 1
-        Me.fullNameTextBox.Text = "Karen Payne"
+        Me.fullNameTextBox.Text = "Dan Miller"
         '
         'isBlackListedExecuteButton
         '

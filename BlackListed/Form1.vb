@@ -26,8 +26,9 @@ Public Class Form1
     End Sub
     Private Sub IsBlackListCheck()
         Dim ops = New DataOperations
-        If ops.IsBlackListed(userNameTextBox.Text, fullNameTextBox.Text) Then
-            MessageBox.Show("Black listed")
+        Dim result = ops.IsBlackListedByFullName(fullNameTextBox.Text)
+        If Not String.IsNullOrWhiteSpace(result) Then
+            MessageBox.Show($"{result} is black listed")
         End If
     End Sub
 End Class
