@@ -1,3 +1,4 @@
+Imports MasterDetailRelation.Extensions
 Imports MasterDetailsDataLibrary
 Imports MasterDetailsDataLibrary.LanguageExtensions
 
@@ -35,8 +36,8 @@ Public Class frmMainForm
         Dim dataAccess As New CustomerOrdersSetup
 
         If dataAccess.Load(errorMessage) Then
-            bsMaster = dataAccess.Master
-            bsDetails = dataAccess.Details
+            bsMaster = dataAccess.MasterBindingSource
+            bsDetails = dataAccess.DetailsBindingSource
 
             MasterGrid.DataSource = bsMaster
             ChildGrid.DataSource = bsDetails
@@ -69,7 +70,9 @@ Public Class frmMainForm
         Else
             MessageBox.Show(errorMessage)
         End If
+
         bsMaster.Filter = "City='London'"
+
     End Sub
     Private Sub bsMaster_PositionChanged(sender As Object, e As EventArgs) Handles bsMaster.PositionChanged
         If bsMaster.Current IsNot Nothing Then
@@ -94,6 +97,7 @@ Public Class frmMainForm
         Catch ex As Exception
             Console.WriteLine(ex.Message)
         End Try
+
     End Sub
     ''' <summary>
     ''' Simple example of creating a DataView of Orders for the currently
@@ -102,9 +106,10 @@ Public Class frmMainForm
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     ''' <remarks></remarks>
-    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click, cmdShowChildDetails.Click
-
-        'http://code.msdn.microsoft.com/Basics-of-manuall-creating-aa1a5c3d
+    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) _
+        Handles _
+            ToolStripButton1.Click,
+            cmdShowChildDetails.Click
 
         Dim custView As DataView = New DataView(DirectCast(bsMaster.DataSource, DataSet).Tables("Orders").Copy,
                                                 <T>
@@ -124,20 +129,22 @@ Public Class frmMainForm
 
         sb.AppendLine(String.Format("----------------------    -------"))
 
-        For Row As Integer = 0 To custView.Count - 1
-            If IsDBNull(custView(Row)("ShippedDate")) Then
-                sb.AppendLine($"{"Not shipped",-25} [{custView(Row)("Freight")}]")
+        For row As Integer = 0 To custView.Count - 1
+            If IsDBNull(custView(row)("ShippedDate")) Then
+                sb.AppendLine($"{"Not shipped",-25} [{custView(row)("Freight")}]")
             Else
-                sb.AppendLine($"{custView(Row)("ShippedDate"),-25} [{custView(Row)("Freight") }]")
+                sb.AppendLine($"{custView(row)("ShippedDate"),-25} [{custView(row)("Freight") }]")
             End If
         Next
 
         Dim f As New frmShowDetails
 
         Try
+
             f.Text = String.Concat("Company: ", bsMaster.CurrentRow("CompanyName"))
             f.TextBox1.Text = sb.ToString
             f.ShowDialog()
+
         Finally
             f.Dispose()
         End Try
@@ -160,7 +167,9 @@ Public Class frmMainForm
         End If
     End Sub
     Private Sub MasterGrid_CellFormatting(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellFormattingEventArgs) Handles MasterGrid.CellFormatting
+
         If MasterGrid.CurrentRow IsNot Nothing Then
+
             If MasterGrid.CurrentRow.IsNewRow Then
                 Exit Sub
             End If
@@ -184,26 +193,29 @@ Public Class frmMainForm
     ''' <param name="e"></param>
     ''' <remarks></remarks>
     Private Sub cmdProcess_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdProcess.Click
-        Dim TheList =
+
+        Dim dataRows =
             (
                 From T In DirectCast(bsMaster.DataSource, DataSet).Tables("Orders").AsEnumerable
                 Where T.Field(Of Boolean)("Process") = True
             ).ToList
 
-        If TheList.Count > 0 Then
-            My.Dialogs.InformationDialog("You marked " & TheList.Count.ToString & " items")
+        If dataRows.Count > 0 Then
+            My.Dialogs.InformationDialog("You marked " & dataRows.Count.ToString & " items")
         Else
             My.Dialogs.InformationDialog("Nothing marked to process.")
         End If
 
     End Sub
     ''' <summary>
-    ''' Code used to display the Leech form
+    ''' Code used to display the Leech form. The leech form provides
+    ''' access to underlying fields for development purposes, not for production.
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     ''' <remarks></remarks>
     Private Sub cmdLeech_Click(sender As Object, e As EventArgs) Handles cmdLeech.Click
+
         If Not My.Application.IsFormOpen("ChildForm") Then
             mLeechChildForm = New frmLeech
             mLeechChildForm.Owner = Me
@@ -211,18 +223,21 @@ Public Class frmMainForm
             mLeechChildForm.Owner = Me
             mFirstTimeForLeechForm = True
         End If
+
         mLeechChildForm.Show()
         If mFirstTimeForLeechForm Then
             mLeechChildForm.Location = New Point(Me.Left + Me.Width, Top)
             mFirstTimeForLeechForm = False
         End If
+
     End Sub
     Private Sub cmdLocateEmployeeInDetails_Click(sender As Object, e As EventArgs) Handles cmdLocateEmployeeInDetails.Click
+
         If Not String.IsNullOrWhiteSpace(txtOrder.Text) Then
             If Integer.TryParse(txtOrder.Text, Nothing) Then
-                Dim Index As Integer = bsDetails.Find("OrderID", txtOrder.Text)
-                If Index <> -1 Then
-                    bsDetails.Position = Index
+                Dim index As Integer = bsDetails.Find("OrderID", txtOrder.Text)
+                If index <> -1 Then
+                    bsDetails.Position = index
                 Else
                     MessageBox.Show("Failed to locate employee")
                 End If
@@ -234,10 +249,7 @@ Public Class frmMainForm
         End If
     End Sub
 
-    Private Sub MasterGrid_CellMouseDoubleClick(
-        sender As Object,
-        e As DataGridViewCellMouseEventArgs) _
-    Handles MasterGrid.CellMouseDoubleClick
+    Private Sub MasterGrid_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles MasterGrid.CellMouseDoubleClick
 
         If e.RowIndex >= 0 AndAlso e.ColumnIndex >= 0 Then
             '
@@ -249,15 +261,18 @@ Public Class frmMainForm
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles getChildRows.Click
-        Dim ParentRow As DataRow = CType(bsMaster.Current, DataRowView).Row
-        Dim ChildRows As DataRow() = ParentRow.GetChildRows("CustomersOrders")
+        Dim parentRow As DataRow = CType(bsMaster.Current, DataRowView).Row
+        Dim childRows As DataRow() = parentRow.GetChildRows("CustomersOrders")
 
-        For Each cr As DataRow In ChildRows
-            Console.WriteLine(String.Join(",", cr.ItemArray))
+        For Each childRow As DataRow In childRows
+            Console.WriteLine(String.Join(",", childRow.ItemArray))
         Next
 
         Console.WriteLine(bsDetails.ParentRow("CustomersOrders").Field(Of String)("CompanyName"))
+
+        MessageBox.Show("See IDE Output window for results.")
     End Sub
 
-
+    '28
+    '510
 End Class

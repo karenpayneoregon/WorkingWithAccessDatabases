@@ -1,4 +1,7 @@
-﻿Public Class frmDisplayColumns
+﻿''' <summary>
+''' Provides the capability to show/hide columns for a DataGridView
+''' </summary>
+Public Class frmDisplayColumns
     WithEvents _bsColumns As New BindingSource
     Private _dataTable As New DataTable
     Private _dataGridView As DataGridView

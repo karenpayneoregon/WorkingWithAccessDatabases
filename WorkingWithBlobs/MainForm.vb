@@ -1,5 +1,6 @@
 ﻿Imports System.IO
 Imports BackendBlobs
+Imports WorkingWithBinaryData.My
 
 Public Class MainForm
     Private bsData As New BindingSource
@@ -56,7 +57,7 @@ Public Class MainForm
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub DataGridView1_UserDeletingRow(sender As Object, e As DataGridViewRowCancelEventArgs) Handles DataGridView1.UserDeletingRow
-        If My.Dialogs.RemoveCurrentRecord Then
+        If KarensDialogs.Dialogs.RemoveCurrentRecord Then
             Dim ops As New DataOperations
             If Not ops.RemoveRecord(CType(bsData.Current, DataRowView).Row.Field(Of Integer)("Identifier")) Then
                 MessageBox.Show("Failed to remove row.")

@@ -105,12 +105,16 @@ Public Class DataOperations
 
         Try
 
-            Dim fileStream As IO.FileStream = Nothing
-            Dim reader As IO.BinaryReader = Nothing
+            Dim fileStream As FileStream = Nothing
+            Dim reader As BinaryReader = Nothing
             Dim contentBytes() As Byte = Nothing
 
+            Dim insertStatement = "INSERT INTO Table1 (FileName, Contents,Comment) " &
+                                  "VALUES(@FileName,@Contents,@Comment)"
+
             Using cn As New OleDbConnection With {.ConnectionString = ConnectionString}
-                Using cmd As New OleDbCommand With {.Connection = cn, .CommandText = "INSERT INTO Table1 (FileName, Contents,Comment) VALUES(@FileName,@Contents,@Comment)"}
+                Using cmd As New OleDbCommand With {.Connection = cn, .CommandText = insertStatement}
+
                     cmd.Parameters.Add("@FileName", OleDbType.WChar)
                     cmd.Parameters.Add("@Contents", OleDbType.LongVarBinary)
                     cmd.Parameters.Add("@Comment", OleDbType.WChar)
@@ -176,7 +180,10 @@ Public Class DataOperations
 
                     cn.Open()
 
-                    cmd.CommandText = "INSERT INTO Table1 (FileName, Contents,Comment) VALUES(@FileName,@Contents,@Comment)"
+                    Dim insertStatement = "INSERT INTO Table1 (FileName, Contents,Comment) " &
+                                          "VALUES(@FileName,@Contents,@Comment)"
+
+                    cmd.CommandText = insertStatement
                     cmd.Connection = cn
 
                     cmd.Parameters.Add("@FileName", OleDbType.WChar)
@@ -241,7 +248,6 @@ Public Class DataOperations
 
                     Dim fileStream As IO.FileStream
                     Dim reader As OleDbDataReader
-                    Dim contentBytes() As Byte = Nothing
                     Dim writer As BinaryWriter = Nothing
                     Dim bufferSize As Integer = 1000
 

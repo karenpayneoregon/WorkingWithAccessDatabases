@@ -1,5 +1,5 @@
 ﻿''' <summary>
-''' 
+''' Old school setting up global variables
 ''' </summary>
 ''' <remarks>
 ''' Could have used constants rather than functions
@@ -21,7 +21,5 @@ Public Module ProjectGlobals
     Public Function OrderIdentifier() As String
         Return "OrderID"
     End Function
-    Public Function RemoveFilterIdentifier() As String
-        Return "0"
-    End Function
+
 End Module

@@ -18,28 +18,28 @@ Public Class CustomerOrdersSetup
     ''' <value></value>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Property Master As New BindingSource
+    Public Property MasterBindingSource As New BindingSource
     ''' <summary>
     ''' This is the details to the Master 
     ''' </summary>
     ''' <value></value>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Property Details As New BindingSource
+    Public Property DetailsBindingSource As New BindingSource
 
     Public Sub New()
     End Sub
     ''' <summary>
-    ''' 
+    ''' Setup master/details for displaying.
     ''' </summary>
-    ''' <param name="ErrorMessage"></param>
+    ''' <param name="errorMessage"></param>
     ''' <returns></returns>
     ''' <remarks>
     ''' There are some extra assertion on failure to open a table
     ''' in the event a developer while coding had one of the tables
     ''' opened exclusively, it happens :-)
     ''' </remarks>
-    Public Function Load(ByRef ErrorMessage As String) As Boolean
+    Public Function Load(ByRef errorMessage As String) As Boolean
         Dim result As Boolean
         Dim cn As OleDbConnection = Nothing
 
@@ -76,10 +76,14 @@ Public Class CustomerOrdersSetup
             cn)
 
             Try
+                '
+                ' Load Customers (Master to Orders) data into a DataTable in the DataSet (ds).
+                '
                 da.Fill(ds, "Customers")
+
             Catch oex As OleDbException
                 If oex.Message.Contains("exclusively locked") Then
-                    ErrorMessage = "You have the Customer table open"
+                    errorMessage = "You have the Customer table open"
                     Return False
                 End If
             End Try
@@ -111,6 +115,9 @@ Public Class CustomerOrdersSetup
             Try
 
                 da.Fill(ds, "Orders")
+                '
+                ' Load Orders (detail to Customers) data into a DataTable in the DataSet (ds).
+                '
                 ds.Tables("Orders").Columns.Add(New DataColumn With
                    {
                        .ColumnName = "Process", .DataType = GetType(Boolean),
@@ -121,7 +128,7 @@ Public Class CustomerOrdersSetup
             Catch oex As OleDbException
 
                 If oex.Message.Contains("exclusively locked") Then
-                    ErrorMessage = "You have the orders or employee table open"
+                    errorMessage = "You have the orders or employee table open"
                     Return False
                 End If
 
@@ -135,37 +142,26 @@ Public Class CustomerOrdersSetup
             ' Let's create a DataColumn Expression on the customer table reaching down
             ' into the details table via 'Child' in FreightExpression below.
             '
-            Dim FreightExpression As String = "Sum(Child(CustomersOrders).Freight) "
+            Dim freightExpression = "Sum(Child(CustomersOrders).Freight) "
 
             ds.Tables("Customers").Columns.Add(
                 New DataColumn With
                 {
                     .ColumnName = "Freight",
                     .DataType = GetType(String),
-                    .Expression = FreightExpression
+                    .Expression = freightExpression
                 }
             )
 
-            Master.DataSource = ds
-            Master.DataMember = ds.Tables(0).TableName
+            MasterBindingSource.DataSource = ds
+            MasterBindingSource.DataMember = ds.Tables(0).TableName
 
-            Details.DataSource = Master
-            Details.DataMember = ds.Relations(0).RelationName
-
-            Dim CustomerTable As DataTable = ds.Tables("Customers")
-            Dim OrderTable As DataTable = ds.Tables("Orders")
-
-            Dim sampleResult As SampleData =
-            (
-                From customer In CustomerTable.AsEnumerable
-                Join ord In OrderTable.AsEnumerable On customer.Field(Of Integer)("Identifier") Equals ord.Field(Of Integer)("Identifier")
-                Select New SampleData With {.Name = customer.Field(Of String)("CompanyName"), .OrderDate = ord.Field(Of Date)("OrderDate")}
-             ).FirstOrDefault
-
+            DetailsBindingSource.DataSource = MasterBindingSource
+            DetailsBindingSource.DataMember = ds.Relations(0).RelationName
 
             result = True
         Catch ex As Exception
-            ErrorMessage = ex.Message
+            errorMessage = ex.Message
             result = False
         End Try
 

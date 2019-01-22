@@ -12,6 +12,7 @@
     Public Overrides Function ToString() As String
         Return ComputerName
     End Function
+
 End Class
 Public Class User
     Public Property UserId() As Integer
@@ -21,4 +22,5 @@ Public Class User
     Public Overrides Function ToString() As String
         Return $"{Name}"
     End Function
+
 End Class
