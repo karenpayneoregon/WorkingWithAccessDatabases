@@ -16,6 +16,8 @@
 - DataGridView control considerations.
 - Data binding control considerations.
 - Database design.
+- Loading with BackGrounderWorker component.
+- Loading with Iterators and Async.
 - Searching.
 - Query optimization for specific task.
 
