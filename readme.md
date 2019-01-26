@@ -1,8 +1,6 @@
 # Working with MS-Access in VB.NET
 
-[Complete article on Microsoft TechNet](https://social.technet.microsoft.com/wiki/contents/articles/52452.best-practices-working-with-ms-access-with-vb-net-part-1.aspx).
-
-[Part 2](https://social.technet.microsoft.com/wiki/contents/articles/52453.best-practices-working-with-ms-access-with-vb-net-part-2.aspx) and [Part 3](https://social.technet.microsoft.com/wiki/contents/articles/52454.best-practices-working-with-ms-access-with-vb-net-part-3.aspx).
+[Part 1](https://social.technet.microsoft.com/wiki/contents/articles/52452.best-practices-working-with-ms-access-with-vb-net-part-1.aspx), [Part 2](https://social.technet.microsoft.com/wiki/contents/articles/52453.best-practices-working-with-ms-access-with-vb-net-part-2.aspx) and [Part 3](https://social.technet.microsoft.com/wiki/contents/articles/52454.best-practices-working-with-ms-access-with-vb-net-part-3.aspx).
 
 - Interfaces.
 - Factory listeners.
