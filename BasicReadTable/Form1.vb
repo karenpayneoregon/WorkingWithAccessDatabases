@@ -1,7 +1,7 @@
 ﻿Public Class Form1
     Private bsCustomers As New BindingSource
     Private Sub Form1_Shown(sender As Object, e As EventArgs) _
-    Handles Me.Shown
+        Handles Me.Shown
 
         Dim ops As New DatabaseOperations
 
