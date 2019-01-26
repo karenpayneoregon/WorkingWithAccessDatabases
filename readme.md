@@ -19,6 +19,7 @@
 - Loading with BackGrounderWorker component.
 - Loading with Iterators and Async.
 - Searching.
+- Auto filtering component for DataGridView.
 - Query optimization for specific task.
 
 ### Requires
