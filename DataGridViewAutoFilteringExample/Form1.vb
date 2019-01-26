@@ -48,7 +48,9 @@ Public Class Form1
         sender As Object,
         e As DataGridViewBindingCompleteEventArgs) Handles DataGridView1.DataBindingComplete
 
-        Dim filterStatus As String = DataGridViewAutoFilterColumnHeaderCell.GetFilterStatus(DataGridView1)
+        Dim filterStatus As String = DataGridViewAutoFilterColumnHeaderCell.
+                GetFilterStatus(DataGridView1)
+
         If String.IsNullOrWhiteSpace(filterStatus) Then
             filterStatusLabel.Visible = False
         Else
