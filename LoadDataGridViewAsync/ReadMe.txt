@@ -1,0 +1,1 @@
+﻿Refer to the project BackGroundWorkerLoadTable for alternate method for loading a large table.
