@@ -1,14 +1,8 @@
 ﻿Imports DataGridViewAutoFilter
-Imports DataGridViewAutoFilteringExample.Classes
+Imports DataGridViewAutoFilteringExampleSqlServer.Classes
 
 Public Class Form1
     Private bsCustomers As New BindingSource
-    ''' <summary>
-    ''' Load BindingSource from MS-Access via a DataTable,
-    ''' set BindingSource as the DataSource for DataGridView`
-    ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
     Private Sub Form1_Shown(sender As Object, e As EventArgs) Handles Me.Shown
         Dim ops As New DatabaseOperations
 
@@ -18,7 +12,6 @@ Public Class Form1
         Else
             MessageBox.Show(ops.LastExceptionMessage)
         End If
-
     End Sub
     ''' <summary>
     ''' Get current row customer id (hidden) and company name
@@ -32,11 +25,7 @@ Public Class Form1
 
         MessageBox.Show($"{currentCustomerIdentifier}: {currentCustomerName}")
     End Sub
-    ''' <summary>
-    ''' Remove all column filters
-    ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
+
     Private Sub removeAlFiltersButton_Click(sender As Object, e As EventArgs) Handles removeAlFiltersButton.Click
         DataGridViewAutoFilterColumnHeaderCell.RemoveFilter(DataGridView1)
     End Sub

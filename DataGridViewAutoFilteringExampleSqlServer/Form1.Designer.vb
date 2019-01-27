@@ -22,47 +22,56 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.DataGridViewAutoFilterTextBoxColumn5 = New DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn()
+        Me.DataGridViewAutoFilterTextBoxColumn4 = New DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn()
+        Me.DataGridViewAutoFilterTextBoxColumn3 = New DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn()
+        Me.DataGridViewAutoFilterTextBoxColumn2 = New DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn()
+        Me.DataGridViewAutoFilterTextBoxColumn1 = New DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn()
         Me.filterStatusLabel = New System.Windows.Forms.Label()
         Me.removeAlFiltersButton = New System.Windows.Forms.Button()
         Me.currentCompanyIdentifier = New System.Windows.Forms.Button()
-        Me.DataGridViewAutoFilterTextBoxColumn1 = New DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn()
-        Me.DataGridViewAutoFilterTextBoxColumn2 = New DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewAutoFilterTextBoxColumn3 = New DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn()
-        Me.DataGridViewAutoFilterTextBoxColumn4 = New DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn()
-        Me.DataGridViewAutoFilterTextBoxColumn5 = New DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.CompanyColumn = New DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn()
         Me.ContactTitleColumn = New DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn()
         Me.AddressColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CityColumn = New DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn()
         Me.PostalCodeColumn = New DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn()
         Me.CountryColumn = New DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'DataGridView1
+        'DataGridViewAutoFilterTextBoxColumn5
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CompanyColumn, Me.ContactTitleColumn, Me.AddressColumn, Me.CityColumn, Me.PostalCodeColumn, Me.CountryColumn})
-        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView1.Location = New System.Drawing.Point(0, 0)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(713, 242)
-        Me.DataGridView1.TabIndex = 0
+        Me.DataGridViewAutoFilterTextBoxColumn5.DataPropertyName = "Country"
+        Me.DataGridViewAutoFilterTextBoxColumn5.HeaderText = "Country"
+        Me.DataGridViewAutoFilterTextBoxColumn5.Name = "DataGridViewAutoFilterTextBoxColumn5"
         '
-        'Panel1
+        'DataGridViewAutoFilterTextBoxColumn4
         '
-        Me.Panel1.Controls.Add(Me.filterStatusLabel)
-        Me.Panel1.Controls.Add(Me.removeAlFiltersButton)
-        Me.Panel1.Controls.Add(Me.currentCompanyIdentifier)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.Location = New System.Drawing.Point(0, 242)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(713, 55)
-        Me.Panel1.TabIndex = 1
+        Me.DataGridViewAutoFilterTextBoxColumn4.DataPropertyName = "PostalCode"
+        Me.DataGridViewAutoFilterTextBoxColumn4.HeaderText = "Postal"
+        Me.DataGridViewAutoFilterTextBoxColumn4.Name = "DataGridViewAutoFilterTextBoxColumn4"
+        '
+        'DataGridViewAutoFilterTextBoxColumn3
+        '
+        Me.DataGridViewAutoFilterTextBoxColumn3.DataPropertyName = "City"
+        Me.DataGridViewAutoFilterTextBoxColumn3.HeaderText = "City"
+        Me.DataGridViewAutoFilterTextBoxColumn3.Name = "DataGridViewAutoFilterTextBoxColumn3"
+        '
+        'DataGridViewAutoFilterTextBoxColumn2
+        '
+        Me.DataGridViewAutoFilterTextBoxColumn2.DataPropertyName = "Title"
+        Me.DataGridViewAutoFilterTextBoxColumn2.HeaderText = "Contact"
+        Me.DataGridViewAutoFilterTextBoxColumn2.Name = "DataGridViewAutoFilterTextBoxColumn2"
+        '
+        'DataGridViewAutoFilterTextBoxColumn1
+        '
+        Me.DataGridViewAutoFilterTextBoxColumn1.DataPropertyName = "CompanyName"
+        Me.DataGridViewAutoFilterTextBoxColumn1.HeaderText = "Name"
+        Me.DataGridViewAutoFilterTextBoxColumn1.Name = "DataGridViewAutoFilterTextBoxColumn1"
         '
         'filterStatusLabel
         '
@@ -91,17 +100,16 @@ Partial Class Form1
         Me.currentCompanyIdentifier.Text = "Company Id"
         Me.currentCompanyIdentifier.UseVisualStyleBackColor = True
         '
-        'DataGridViewAutoFilterTextBoxColumn1
+        'Panel1
         '
-        Me.DataGridViewAutoFilterTextBoxColumn1.DataPropertyName = "CompanyName"
-        Me.DataGridViewAutoFilterTextBoxColumn1.HeaderText = "Name"
-        Me.DataGridViewAutoFilterTextBoxColumn1.Name = "DataGridViewAutoFilterTextBoxColumn1"
-        '
-        'DataGridViewAutoFilterTextBoxColumn2
-        '
-        Me.DataGridViewAutoFilterTextBoxColumn2.DataPropertyName = "Title"
-        Me.DataGridViewAutoFilterTextBoxColumn2.HeaderText = "Contact"
-        Me.DataGridViewAutoFilterTextBoxColumn2.Name = "DataGridViewAutoFilterTextBoxColumn2"
+        Me.Panel1.Controls.Add(Me.filterStatusLabel)
+        Me.Panel1.Controls.Add(Me.removeAlFiltersButton)
+        Me.Panel1.Controls.Add(Me.currentCompanyIdentifier)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel1.Location = New System.Drawing.Point(0, 296)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(662, 55)
+        Me.Panel1.TabIndex = 3
         '
         'DataGridViewTextBoxColumn1
         '
@@ -109,23 +117,15 @@ Partial Class Form1
         Me.DataGridViewTextBoxColumn1.HeaderText = "Address"
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
         '
-        'DataGridViewAutoFilterTextBoxColumn3
+        'DataGridView1
         '
-        Me.DataGridViewAutoFilterTextBoxColumn3.DataPropertyName = "City"
-        Me.DataGridViewAutoFilterTextBoxColumn3.HeaderText = "City"
-        Me.DataGridViewAutoFilterTextBoxColumn3.Name = "DataGridViewAutoFilterTextBoxColumn3"
-        '
-        'DataGridViewAutoFilterTextBoxColumn4
-        '
-        Me.DataGridViewAutoFilterTextBoxColumn4.DataPropertyName = "PostalCode"
-        Me.DataGridViewAutoFilterTextBoxColumn4.HeaderText = "Postal"
-        Me.DataGridViewAutoFilterTextBoxColumn4.Name = "DataGridViewAutoFilterTextBoxColumn4"
-        '
-        'DataGridViewAutoFilterTextBoxColumn5
-        '
-        Me.DataGridViewAutoFilterTextBoxColumn5.DataPropertyName = "Country"
-        Me.DataGridViewAutoFilterTextBoxColumn5.HeaderText = "Country"
-        Me.DataGridViewAutoFilterTextBoxColumn5.Name = "DataGridViewAutoFilterTextBoxColumn5"
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CompanyColumn, Me.ContactTitleColumn, Me.AddressColumn, Me.CityColumn, Me.PostalCodeColumn, Me.CountryColumn})
+        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DataGridView1.Location = New System.Drawing.Point(0, 0)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(662, 351)
+        Me.DataGridView1.TabIndex = 2
         '
         'CompanyColumn
         '
@@ -135,13 +135,13 @@ Partial Class Form1
         '
         'ContactTitleColumn
         '
-        Me.ContactTitleColumn.DataPropertyName = "Title"
+        Me.ContactTitleColumn.DataPropertyName = "ContactTitle"
         Me.ContactTitleColumn.HeaderText = "Contact"
         Me.ContactTitleColumn.Name = "ContactTitleColumn"
         '
         'AddressColumn
         '
-        Me.AddressColumn.DataPropertyName = "Address"
+        Me.AddressColumn.DataPropertyName = "Street"
         Me.AddressColumn.HeaderText = "Address"
         Me.AddressColumn.Name = "AddressColumn"
         '
@@ -159,7 +159,7 @@ Partial Class Form1
         '
         'CountryColumn
         '
-        Me.CountryColumn.DataPropertyName = "Country"
+        Me.CountryColumn.DataPropertyName = "CountryName"
         Me.CountryColumn.HeaderText = "Country"
         Me.CountryColumn.Name = "CountryColumn"
         '
@@ -167,20 +167,29 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(713, 297)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.ClientSize = New System.Drawing.Size(662, 351)
         Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.DataGridView1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "DataGridView Auto Filter with MS-Access"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Text = "DataGridView auto filter with SQL-Server"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-
+    Friend WithEvents DataGridViewAutoFilterTextBoxColumn5 As DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn
+    Friend WithEvents DataGridViewAutoFilterTextBoxColumn4 As DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn
+    Friend WithEvents DataGridViewAutoFilterTextBoxColumn3 As DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn
+    Friend WithEvents DataGridViewAutoFilterTextBoxColumn2 As DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn
+    Friend WithEvents DataGridViewAutoFilterTextBoxColumn1 As DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn
+    Friend WithEvents filterStatusLabel As Label
+    Friend WithEvents removeAlFiltersButton As Button
+    Friend WithEvents currentCompanyIdentifier As Button
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents CompanyColumn As DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn
     Friend WithEvents ContactTitleColumn As DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn
@@ -188,14 +197,4 @@ Partial Class Form1
     Friend WithEvents CityColumn As DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn
     Friend WithEvents PostalCodeColumn As DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn
     Friend WithEvents CountryColumn As DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents currentCompanyIdentifier As Button
-    Friend WithEvents removeAlFiltersButton As Button
-    Friend WithEvents filterStatusLabel As Label
-    Friend WithEvents DataGridViewAutoFilterTextBoxColumn1 As DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn
-    Friend WithEvents DataGridViewAutoFilterTextBoxColumn2 As DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewAutoFilterTextBoxColumn3 As DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn
-    Friend WithEvents DataGridViewAutoFilterTextBoxColumn4 As DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn
-    Friend WithEvents DataGridViewAutoFilterTextBoxColumn5 As DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn
 End Class
