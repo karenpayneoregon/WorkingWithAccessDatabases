@@ -21,6 +21,7 @@
 - Searching.
 - Auto filtering component for DataGridView.
 - Query optimization for specific task.
+- Upscaling to SQL-Server.
 
 ### Requires
 - Microsoft Visual Studio (written in 2017)
