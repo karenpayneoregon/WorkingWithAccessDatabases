@@ -17,23 +17,8 @@ Public Class Form1
         ops.BlowUp("Karen")
 
     End Sub
-    Public Sub OnListen(Message As String) Implements IListener.OnListen
-        Console.WriteLine($"Form1: '{Message}'")
-    End Sub
-    Public Sub OnListen(ClassName As String, Message As String) Implements IListener.OnListen
-        If ClassName = "Form2" Then
-            TextBox1.Text = Message
-        ElseIf ClassName = "Form3" Then
-            MessageBox.Show(Message)
-        End If
-    End Sub
-    Protected Overrides Sub Finalize()
-        Broadcaster.RemoveListener(Me)
-        MyBase.Finalize()
-    End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-
 
         Dim f2 As New Form2
         f2.Show()
@@ -59,5 +44,19 @@ Public Class Form1
         End If
     End Sub
 
+    Public Sub OnListen(Message As String) Implements IListener.OnListen
+        Console.WriteLine($"Form1: '{Message}'")
+    End Sub
+    Public Sub OnListen(ClassName As String, Message As String) Implements IListener.OnListen
+        If ClassName = "Form2" Then
+            TextBox1.Text = Message
+        ElseIf ClassName = "Form3" Then
+            MessageBox.Show(Message)
+        End If
+    End Sub
+    Protected Overrides Sub Finalize()
+        Broadcaster.RemoveListener(Me)
+        MyBase.Finalize()
+    End Sub
 
 End Class

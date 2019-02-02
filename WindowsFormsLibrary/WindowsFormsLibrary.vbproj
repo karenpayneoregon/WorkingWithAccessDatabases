@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\BindingSourceExtensions.vb" />
+    <Compile Include="Extensions\DataGridViewExtensions.vb" />
     <Compile Include="Extensions\StringExtensions.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

@@ -24,7 +24,6 @@ Public Class Form1
                 CType(bsData.DataSource, DataTable).Rows.Add(New Object() {identifier, CompanyNameTextBox.Text, ContactNameTextBox.Text, contactTitleTextBox.Text})
                 bsData.MoveLast()
             End If
-
         End If
     End Sub
 End Class
