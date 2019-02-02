@@ -1,5 +1,11 @@
 # Working with MS-Access in VB.NET
 
+Although code samples provided here are performed with Microsoft Access databases by using patterns shown they provide a upscale to moving on to Microsoft SQL-Server databases.
+> These patterns will go against what a novice developer believes to be the correct path for interacting with data as they are not a simple approach to working with a database. Patterns presented in the code samples are intended for both best practices along with providing 
+reusability between forms in one project or between similar projects that work with data centric solutions.
+
+Currently there are three articles in the series which will expand shortly to include more common solutions working with Microsoft Access databases and upscaling to SQL-Server.
+
 [Part 1](https://social.technet.microsoft.com/wiki/contents/articles/52452.best-practices-working-with-ms-access-with-vb-net-part-1.aspx), [Part 2](https://social.technet.microsoft.com/wiki/contents/articles/52453.best-practices-working-with-ms-access-with-vb-net-part-2.aspx) and [Part 3](https://social.technet.microsoft.com/wiki/contents/articles/52454.best-practices-working-with-ms-access-with-vb-net-part-3.aspx).
 
 - Interfaces.
