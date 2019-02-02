@@ -30,8 +30,8 @@ Currently there are three articles in the series which will expand shortly to in
 - Upscaling to SQL-Server.
 
 ### Requires
-- Microsoft Visual Studio (written in 2017)
-- Microsoft Access data providers.
+- Microsoft [Visual Studio](https://visualstudio.microsoft.com/) (written in 2017)
+- Microsoft Access [data providers](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/data-providers).
 
 ### Encryption notes
 In this code sample MS-Access databases are encrypted. When working with your own database and connections fail, make sure to try the following.
