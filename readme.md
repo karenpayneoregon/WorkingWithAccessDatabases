@@ -31,6 +31,7 @@ Currently there are three articles in the series which will expand shortly to in
 
 ### Requires
 - Microsoft Visual Studio (written in 2017)
+- Microsoft Access data providers.
 
 ### Encryption notes
 In this code sample MS-Access databases are encrypted. When working with your own database and connections fail, make sure to try the following.
