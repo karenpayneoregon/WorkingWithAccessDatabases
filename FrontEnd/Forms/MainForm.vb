@@ -27,7 +27,7 @@
         operations.EncryptFile()
 
         If ops.TestConnection() Then
-            bsCustomers.DataSource = ops.LoadCustomers()
+            bsCustomers.DataSource = ops.LoadCustomersWithPassword()
 
             If ops.IsSuccessFul Then
                 contactTitles = ops.LoadContactTitles()

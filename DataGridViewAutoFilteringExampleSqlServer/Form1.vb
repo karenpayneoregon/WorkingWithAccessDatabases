@@ -35,8 +35,8 @@ Public Class Form1
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Private Sub DataGridView1_DataBindingComplete(
-        sender As Object,
-        e As DataGridViewBindingCompleteEventArgs) Handles DataGridView1.DataBindingComplete
+          sender As Object,
+          e As DataGridViewBindingCompleteEventArgs) Handles DataGridView1.DataBindingComplete
 
         Dim filterStatus As String = DataGridViewAutoFilterColumnHeaderCell.
                 GetFilterStatus(DataGridView1)

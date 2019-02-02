@@ -22,7 +22,7 @@ Partial Class frmMainForm
             If f.ShowDialog = DialogResult.OK Then
                 Dim identifier = 0
                 ' if the row was added, insert it to the current DataTable
-                If ops.AddNewRow(f.txtCompanyName.Text, f.txtContactName.Text, f.cboTitle.Text, identifier) Then
+                If ops.AddNewRowWithPassword(f.txtCompanyName.Text, f.txtContactName.Text, f.cboTitle.Text, identifier) Then
                     bsCustomers.DataTable.Rows.Add(New Object() {True, identifier, f.txtCompanyName.Text, f.txtContactName.Text, f.cboTitle.Text})
                     bsCustomers.Locate("Identifier", identifier.ToString)
                 Else

@@ -42,7 +42,7 @@ Public Class DatabaseOperations
     ''' <remarks>
     ''' XML Literals allow a developer to write clean SQL with no string concatenation.
     ''' </remarks>
-    Public Function LoadCustomers() As DataTable
+    Public Function LoadCustomersWithPassword() As DataTable
 
         Using cn As New OleDbConnection(ConnectionStringWithPassword)
             Using cmd As New OleDbCommand With {.Connection = cn}
@@ -64,6 +64,37 @@ Public Class DatabaseOperations
                     dt.Load(cmd.ExecuteReader)
                     dt.Columns("Identifier").ColumnMapping = MappingType.Hidden
                     dt.Columns("Process").ColumnMapping = MappingType.Hidden
+
+                Catch ex As Exception
+                    mHasException = True
+                    mLastException = ex
+                End Try
+
+                Return dt
+
+            End Using
+        End Using
+    End Function
+    Public Function LoadCustomersWithoutPassword() As DataTable
+
+        Using cn As New OleDbConnection(ConnectionString)
+            Using cmd As New OleDbCommand With {.Connection = cn}
+                cmd.CommandText = <SQL>
+                        SELECT 
+                            Identifier, 
+                            CompanyName, 
+                            ContactName, 
+                            ContactTitle
+                        FROM Customers 
+                        ORDER BY CompanyName;
+                    </SQL>.Value
+
+                Dim dt As New DataTable With {.TableName = "Customer"}
+
+                Try
+                    cn.Open()
+                    dt.Load(cmd.ExecuteReader)
+                    dt.Columns("Identifier").ColumnMapping = MappingType.Hidden
 
                 Catch ex As Exception
                     mHasException = True
@@ -163,7 +194,7 @@ Public Class DatabaseOperations
     End Function
 
     ''' <summary>
-    ''' Add a new customer to the database table
+    ''' Add a new customer to the database table where the database is password protected.
     ''' </summary>
     ''' <param name="pName">Company name</param>
     ''' <param name="pContact">Contact name</param>
@@ -173,7 +204,7 @@ Public Class DatabaseOperations
     ''' <remarks>
     ''' XML Literals allow a developer to write clean SQL with no string concatenation.
     ''' </remarks>
-    Public Function AddNewRow(pName As String, pContact As String, pContactTitle As String, ByRef pIdentfier As Integer) As Boolean
+    Public Function AddNewRowWithPassword(pName As String, pContact As String, pContactTitle As String, ByRef pIdentfier As Integer) As Boolean
 
         Dim success As Boolean = True
 
@@ -182,6 +213,62 @@ Public Class DatabaseOperations
                 Using cmd As New OleDbCommand With {.Connection = cn}
                     cmd.CommandText = <SQL>
                             INSERT INTO Customer 
+                                (
+                                    CompanyName,
+                                    ContactName,
+                                    ContactTitle
+                                ) 
+                            Values
+                                (
+                                    @CompanyName,
+                                    @ContactName,
+                                    @ContactTitle
+                                )
+                        </SQL>.Value
+
+                    cmd.Parameters.AddWithValue("@CompanyName", pName)
+                    cmd.Parameters.AddWithValue("@ContactName", pContact)
+                    cmd.Parameters.AddWithValue("@ContactTitle", pContactTitle)
+
+                    cn.Open()
+
+                    cmd.ExecuteNonQuery()
+
+                    cmd.CommandText = "Select @@Identity"
+                    pIdentfier = CInt(cmd.ExecuteScalar)
+
+                End Using
+            End Using
+
+        Catch ex As Exception
+            mHasException = True
+            mLastException = ex
+            success = False
+        End Try
+
+        Return success
+    End Function
+    ''' <summary>
+    ''' Add a new customer to the database table where the database is not password protected.
+    ''' </summary>
+    ''' <param name="pName">Company name</param>
+    ''' <param name="pContact">Contact name</param>
+    ''' <param name="pContactTitle">Contact title</param>
+    ''' <param name="pIdentfier">Returning new primary key</param>
+    ''' <returns>True if successful and pIdentifier will hold the new record's primary key</returns>
+    ''' <remarks>
+    ''' XML Literals allow a developer to write clean SQL with no string concatenation.
+    ''' The password version above also works against a different table, Customer rather than here, Customersa
+    ''' </remarks>
+    Public Function AddNewRowWithoutPassword(pName As String, pContact As String, pContactTitle As String, ByRef pIdentfier As Integer) As Boolean
+
+        Dim success As Boolean = True
+
+        Try
+            Using cn As New OleDbConnection(ConnectionString)
+                Using cmd As New OleDbCommand With {.Connection = cn}
+                    cmd.CommandText = <SQL>
+                            INSERT INTO Customers 
                                 (
                                     CompanyName,
                                     ContactName,

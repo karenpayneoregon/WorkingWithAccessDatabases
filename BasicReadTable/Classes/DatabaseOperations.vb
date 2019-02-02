@@ -18,7 +18,6 @@ Public Class DatabaseOperations
     Public Function LoadCompanyNames() As List(Of String)
         Dim nameList As New List(Of String)
         Using cn As New OleDbConnection(ConnectionString)
-            Console.WriteLine(ConnectionString)
             Using cmd As New OleDbCommand With {.Connection = cn}
                 cmd.CommandText = "SELECT  CompanyName FROM Customers"
                 cn.Open()
