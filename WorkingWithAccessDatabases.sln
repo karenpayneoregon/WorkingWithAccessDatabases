@@ -68,6 +68,10 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "FrameworkForUpdatingDataGri
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ForumQuestion", "ForumQuestion\ForumQuestion.vbproj", "{75D78602-F0D6-4119-8357-2C58F0EA6E9E}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ChangeCurrentAccessDatabasePassword", "ChangeCurrentAccessDatabasePassword\ChangeCurrentAccessDatabasePassword.vbproj", "{0EEBF8FE-B38F-423B-986D-C852E0E5982F}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Spinner_Or_ProgressBar_VB", "DemoSplashScreen_Spinner_VB\Spinner_Or_ProgressBar_VB.vbproj", "{ED5E806F-CE77-4A59-A220-F196E9E736A3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -299,6 +303,22 @@ Global
 		{75D78602-F0D6-4119-8357-2C58F0EA6E9E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{75D78602-F0D6-4119-8357-2C58F0EA6E9E}.Release|x86.ActiveCfg = Release|Any CPU
 		{75D78602-F0D6-4119-8357-2C58F0EA6E9E}.Release|x86.Build.0 = Release|Any CPU
+		{0EEBF8FE-B38F-423B-986D-C852E0E5982F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EEBF8FE-B38F-423B-986D-C852E0E5982F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EEBF8FE-B38F-423B-986D-C852E0E5982F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0EEBF8FE-B38F-423B-986D-C852E0E5982F}.Debug|x86.Build.0 = Debug|Any CPU
+		{0EEBF8FE-B38F-423B-986D-C852E0E5982F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EEBF8FE-B38F-423B-986D-C852E0E5982F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EEBF8FE-B38F-423B-986D-C852E0E5982F}.Release|x86.ActiveCfg = Release|Any CPU
+		{0EEBF8FE-B38F-423B-986D-C852E0E5982F}.Release|x86.Build.0 = Release|Any CPU
+		{ED5E806F-CE77-4A59-A220-F196E9E736A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED5E806F-CE77-4A59-A220-F196E9E736A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED5E806F-CE77-4A59-A220-F196E9E736A3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{ED5E806F-CE77-4A59-A220-F196E9E736A3}.Debug|x86.Build.0 = Debug|Any CPU
+		{ED5E806F-CE77-4A59-A220-F196E9E736A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED5E806F-CE77-4A59-A220-F196E9E736A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED5E806F-CE77-4A59-A220-F196E9E736A3}.Release|x86.ActiveCfg = Release|Any CPU
+		{ED5E806F-CE77-4A59-A220-F196E9E736A3}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -332,6 +352,8 @@ Global
 		{31CBC50B-E640-443A-B67D-D2C3E436638B} = {085C30FB-D89A-4434-ABF9-CCF12C828B75}
 		{33CF5010-13D9-49CB-8913-9121F4552585} = {085C30FB-D89A-4434-ABF9-CCF12C828B75}
 		{75D78602-F0D6-4119-8357-2C58F0EA6E9E} = {085C30FB-D89A-4434-ABF9-CCF12C828B75}
+		{0EEBF8FE-B38F-423B-986D-C852E0E5982F} = {085C30FB-D89A-4434-ABF9-CCF12C828B75}
+		{ED5E806F-CE77-4A59-A220-F196E9E736A3} = {085C30FB-D89A-4434-ABF9-CCF12C828B75}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FAB3340A-360D-4095-BFAA-D12BEF771292}
