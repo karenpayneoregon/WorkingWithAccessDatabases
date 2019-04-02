@@ -22,5 +22,6 @@ Public Class Form1
         Else
             MessageBox.Show("Please select a category")
         End If
+
     End Sub
 End Class
