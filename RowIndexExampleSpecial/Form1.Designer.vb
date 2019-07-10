@@ -128,7 +128,7 @@ Partial Class Form1
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Get Row Index for DatarOW"
+        Me.Text = "Get Row Index for DataRow"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
