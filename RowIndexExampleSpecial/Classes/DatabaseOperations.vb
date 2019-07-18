@@ -2,8 +2,9 @@
 
 Public Class DatabaseOperations
     '
-    Private ConnectionString As String = "Provider=Microsoft.ACE.OLEDB.12.0;" &
-                                         $"Data Source={AppDomain.CurrentDomain.BaseDirectory}\Database1.accdb"
+    Private ConnectionString As String =
+                "Provider=Microsoft.ACE.OLEDB.12.0;" &
+               $"Data Source={AppDomain.CurrentDomain.BaseDirectory}\Database1.accdb"
     Public Function LoadCustomers() As DataTable
 
         Using cn As New OleDbConnection(ConnectionString)

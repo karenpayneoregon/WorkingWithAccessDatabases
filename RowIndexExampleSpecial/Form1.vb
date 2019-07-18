@@ -7,17 +7,29 @@
         CompanyTextBox.DataBindings.Add("Text", bs, "CompanyName")
         CountryTextBox.DataBindings.Add("Text", bs, "Country")
     End Sub
-    Private Sub MoveFirstButton_Click(sender As Object, e As EventArgs) Handles MoveFirstButton.Click
+    Private Sub MoveFirstButton_Click(sender As Object, e As EventArgs) _
+        Handles MoveFirstButton.Click
+
         bs.MoveFirst()
+
     End Sub
-    Private Sub MovePriorButton_Click(sender As Object, e As EventArgs) Handles MovePriorButton.Click
+    Private Sub MovePriorButton_Click(sender As Object, e As EventArgs) _
+        Handles MovePriorButton.Click
+
         bs.MovePrevious()
+
     End Sub
-    Private Sub MoveNextButton_Click(sender As Object, e As EventArgs) Handles MoveNextButton.Click
+    Private Sub MoveNextButton_Click(sender As Object, e As EventArgs) _
+        Handles MoveNextButton.Click
+
         bs.MoveNext()
+
     End Sub
-    Private Sub MoveLastButton_Click(sender As Object, e As EventArgs) Handles MoveLastButton.Click
+    Private Sub MoveLastButton_Click(sender As Object, e As EventArgs) _
+        Handles MoveLastButton.Click
+
         bs.MoveLast()
+
     End Sub
     Private Function GetRowIndex() As Integer
         If bs.Current IsNot Nothing Then
@@ -29,7 +41,10 @@
         End If
     End Function
 
-    Private Sub CurrentIndexButton_Click(sender As Object, e As EventArgs) Handles CurrentIndexButton.Click
+    Private Sub CurrentIndexButton_Click(sender As Object, e As EventArgs) _
+        Handles CurrentIndexButton.Click
+
         MessageBox.Show($"Current DataRow Index is {GetRowIndex()}")
+
     End Sub
 End Class
