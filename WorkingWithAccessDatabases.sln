@@ -86,6 +86,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "RowIndexExampleSpecial", "R
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SimpleSearchExampleForumQuesion", "SimpleSearchExampleForumQuesion\SimpleSearchExampleForumQuesion.vbproj", "{B8489771-9C10-4909-ADEC-97BBEA32EEAD}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "RetrieveAutoIncrementingIdentifier", "RetrieveAutoIncrementingIdentifier\RetrieveAutoIncrementingIdentifier.vbproj", "{88596EB5-9C10-4F74-A69D-A419DFEA909D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -389,6 +391,14 @@ Global
 		{B8489771-9C10-4909-ADEC-97BBEA32EEAD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B8489771-9C10-4909-ADEC-97BBEA32EEAD}.Release|x86.ActiveCfg = Release|Any CPU
 		{B8489771-9C10-4909-ADEC-97BBEA32EEAD}.Release|x86.Build.0 = Release|Any CPU
+		{88596EB5-9C10-4F74-A69D-A419DFEA909D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88596EB5-9C10-4F74-A69D-A419DFEA909D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88596EB5-9C10-4F74-A69D-A419DFEA909D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{88596EB5-9C10-4F74-A69D-A419DFEA909D}.Debug|x86.Build.0 = Debug|Any CPU
+		{88596EB5-9C10-4F74-A69D-A419DFEA909D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88596EB5-9C10-4F74-A69D-A419DFEA909D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88596EB5-9C10-4F74-A69D-A419DFEA909D}.Release|x86.ActiveCfg = Release|Any CPU
+		{88596EB5-9C10-4F74-A69D-A419DFEA909D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -431,6 +441,7 @@ Global
 		{8EF0D807-7290-41CF-A9EE-86286C6C178C} = {085C30FB-D89A-4434-ABF9-CCF12C828B75}
 		{04EBFD07-B9A9-4737-9219-8427DD2D36F2} = {085C30FB-D89A-4434-ABF9-CCF12C828B75}
 		{B8489771-9C10-4909-ADEC-97BBEA32EEAD} = {085C30FB-D89A-4434-ABF9-CCF12C828B75}
+		{88596EB5-9C10-4F74-A69D-A419DFEA909D} = {085C30FB-D89A-4434-ABF9-CCF12C828B75}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FAB3340A-360D-4095-BFAA-D12BEF771292}
