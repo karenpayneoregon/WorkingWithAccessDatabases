@@ -42,3 +42,8 @@ In this code sample MS-Access databases are encrypted. When working with your ow
 - Change  Encryption Method at the bottom. Change to selection to Use Legacy Encryption.
 
 Also there have been reports of encryption failing with passwords longer than 14 characters.
+
+### Special note
+There are a few projects marked as for answering forum questions, these were added as they may be of assistance to others.
+
+This [one](https://github.com/karenpayneoregon/WorkingWithAccessDatabases/tree/master/RetrieveAutoIncrementingIdentifier) is not a code sample to follow as it's fragile, only good for a single user environment.
