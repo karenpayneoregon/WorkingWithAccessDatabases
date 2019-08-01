@@ -26,6 +26,8 @@ Partial Class Form1
         Me.GetNextButton = New System.Windows.Forms.Button()
         Me.CurrentTextBox = New System.Windows.Forms.TextBox()
         Me.NextTextBox = New System.Windows.Forms.TextBox()
+        Me.SetCurrentButton = New System.Windows.Forms.Button()
+        Me.NewCurrentTextBox = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'GetCurrentButton
@@ -60,11 +62,30 @@ Partial Class Form1
         Me.NextTextBox.Size = New System.Drawing.Size(100, 20)
         Me.NextTextBox.TabIndex = 3
         '
+        'SetCurrentButton
+        '
+        Me.SetCurrentButton.Location = New System.Drawing.Point(20, 96)
+        Me.SetCurrentButton.Name = "SetCurrentButton"
+        Me.SetCurrentButton.Size = New System.Drawing.Size(75, 23)
+        Me.SetCurrentButton.TabIndex = 4
+        Me.SetCurrentButton.Text = "Set current"
+        Me.SetCurrentButton.UseVisualStyleBackColor = True
+        '
+        'NewCurrentTextBox
+        '
+        Me.NewCurrentTextBox.Location = New System.Drawing.Point(114, 98)
+        Me.NewCurrentTextBox.Name = "NewCurrentTextBox"
+        Me.NewCurrentTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.NewCurrentTextBox.TabIndex = 5
+        Me.NewCurrentTextBox.Text = "New record"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(246, 118)
+        Me.ClientSize = New System.Drawing.Size(246, 142)
+        Me.Controls.Add(Me.NewCurrentTextBox)
+        Me.Controls.Add(Me.SetCurrentButton)
         Me.Controls.Add(Me.NextTextBox)
         Me.Controls.Add(Me.CurrentTextBox)
         Me.Controls.Add(Me.GetNextButton)
@@ -82,4 +103,6 @@ Partial Class Form1
     Friend WithEvents GetNextButton As Button
     Friend WithEvents CurrentTextBox As TextBox
     Friend WithEvents NextTextBox As TextBox
+    Friend WithEvents SetCurrentButton As Button
+    Friend WithEvents NewCurrentTextBox As TextBox
 End Class

@@ -13,4 +13,11 @@
         NextTextBox.Text = operations.NextIdentifier().ToString()
 
     End Sub
+
+    Private Sub SetCurrentButton_Click(sender As Object, e As EventArgs) Handles SetCurrentButton.Click
+        Dim newIdentifier = operations.Increment(NewCurrentTextBox.Text)
+        If newIdentifier > 0 Then
+            CurrentTextBox.Text = newIdentifier.ToString()
+        End If
+    End Sub
 End Class
