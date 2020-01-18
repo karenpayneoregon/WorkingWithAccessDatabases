@@ -20,7 +20,9 @@ Public Class DataOperations
                 Dim reader = cmd.ExecuteReader()
 
                 While reader.Read()
-                    list.Add(New Category() With {.Id = reader.GetInt32(0), .Name = reader.GetString(1)})
+                    list.Add(New Category() With {
+                                .Id = reader.GetInt32(0),
+                                .Name = reader.GetString(1)})
                 End While
 
             End Using
@@ -34,7 +36,8 @@ Public Class DataOperations
         Using cn As New OleDbConnection(ConnectionString)
             Using cmd As New OleDbCommand With {.Connection = cn}
 
-                cmd.CommandText = "SELECT ProductID, ProductName, CategoryID, UnitPrice FROM Products;"
+                cmd.CommandText =
+                    "SELECT ProductID, ProductName, CategoryID, UnitPrice FROM Products;"
 
                 cn.Open()
 
