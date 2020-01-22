@@ -14,6 +14,8 @@ Public Class DatabaseOperations
     Public Sub New()
         DefaultCatalog = Path.Combine(
             AppDomain.CurrentDomain.BaseDirectory, "Database1.accdb")
+
+        Console.WriteLine(ConnectionString)
     End Sub
     Public Function LoadCompanyNames() As List(Of String)
         Dim nameList As New List(Of String)
