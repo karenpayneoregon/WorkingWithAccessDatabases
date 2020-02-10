@@ -22,4 +22,16 @@
             ops.RemoveCustomer(bsCustomers.CurrentRow().Field(Of Integer)("Identifier"))
         End If
     End Sub
+    ''' <summary>
+    ''' Simple example for performing a like condition on company name
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub CompanyNameLikeButton_Click(sender As Object, e As EventArgs) Handles CompanyNameLikeButton.Click
+        If String.IsNullOrWhiteSpace(CompanyNameLikeTextBox.Text) Then
+            bsCustomers.Filter = ""
+        Else
+            bsCustomers.Filter = $"CompanyName like '*{CompanyNameLikeTextBox.Text}*'"
+        End If
+    End Sub
 End Class
