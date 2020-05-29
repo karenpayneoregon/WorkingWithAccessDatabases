@@ -26,8 +26,12 @@ Partial Class Form1
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.selectProductCategoryButton = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.SearchForTextBox = New System.Windows.Forms.TextBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'categoryComboBox
@@ -41,12 +45,13 @@ Partial Class Form1
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.GroupBox1)
         Me.Panel1.Controls.Add(Me.selectProductCategoryButton)
         Me.Panel1.Controls.Add(Me.categoryComboBox)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.Location = New System.Drawing.Point(0, 390)
+        Me.Panel1.Location = New System.Drawing.Point(0, 346)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(495, 60)
+        Me.Panel1.Size = New System.Drawing.Size(495, 104)
         Me.Panel1.TabIndex = 1
         '
         'selectProductCategoryButton
@@ -64,8 +69,35 @@ Partial Class Form1
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridView1.Location = New System.Drawing.Point(0, 0)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(495, 390)
+        Me.DataGridView1.Size = New System.Drawing.Size(495, 346)
         Me.DataGridView1.TabIndex = 2
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(121, 13)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(116, 23)
+        Me.Button1.TabIndex = 2
+        Me.Button1.Text = "Find Single record"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'SearchForTextBox
+        '
+        Me.SearchForTextBox.Location = New System.Drawing.Point(15, 13)
+        Me.SearchForTextBox.Name = "SearchForTextBox"
+        Me.SearchForTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.SearchForTextBox.TabIndex = 3
+        Me.SearchForTextBox.Text = "Guaraná Fantástica"
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.SearchForTextBox)
+        Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.Location = New System.Drawing.Point(11, 49)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(246, 45)
+        Me.GroupBox1.TabIndex = 4
+        Me.GroupBox1.TabStop = False
         '
         'Form1
         '
@@ -79,6 +111,8 @@ Partial Class Form1
         Me.Text = "Code sample"
         Me.Panel1.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -87,4 +121,7 @@ Partial Class Form1
     Friend WithEvents Panel1 As Panel
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents selectProductCategoryButton As Button
+    Friend WithEvents Button1 As Button
+    Friend WithEvents SearchForTextBox As TextBox
+    Friend WithEvents GroupBox1 As GroupBox
 End Class

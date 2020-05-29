@@ -68,5 +68,50 @@ Namespace Classes
             Return dt
 
         End Function
+        Public Shared Function LoadProduct(productName As String) As Product
+            Dim accessConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=NorthWind_1.accdb"
+            Dim product As New Product
+            Dim selectStatement =
+                    <SQL>
+                        SELECT 
+                            Products.ProductID, 
+                            Products.ProductName, 
+                            Suppliers.CompanyName, 
+                            Products.CategoryID 
+                        FROM Suppliers INNER JOIN Products ON Suppliers.SupplierID = Products.SupplierID 
+                        WHERE Products.ProductName=@ProductName;
+                    </SQL>.Value
+
+            Using cn As New OleDbConnection With {.ConnectionString = accessConnectionString}
+                Using cmd As New OleDbCommand With {.CommandText = selectStatement, .Connection = cn}
+                    cn.Open()
+
+                    cmd.Parameters.AddWithValue("@ProductName", productName)
+
+                    Dim reader = cmd.ExecuteReader()
+                    If reader.HasRows Then
+                        reader.Read()
+                        product.ProductID = reader.GetInt32(0)
+                        product.ProductName = reader.GetString(1)
+                        product.CompanyName = reader.GetString(2)
+                        product.CategoryID = reader.GetInt32(3)
+                    End If
+
+                End Using
+            End Using
+
+            Return product
+
+        End Function
+    End Class
+    Public Class Product
+        Public Property ProductID() As Integer
+        Public Property ProductName() As String
+        Public Property CompanyName() As String
+        Public Property CategoryID() As Integer
+
+        Public Overrides Function ToString() As String
+            Return $"{ProductID} - {CompanyName}  {CategoryID}"
+        End Function
     End Class
 End Namespace

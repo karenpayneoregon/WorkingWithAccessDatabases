@@ -24,4 +24,11 @@ Public Class Form1
         End If
 
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        If Not String.IsNullOrWhiteSpace(SearchForTextBox.Text) Then
+            Dim product = DatabaseOperations.LoadProduct(SearchForTextBox.Text)
+            MessageBox.Show(product.ToString())
+        End If
+    End Sub
 End Class
