@@ -4,14 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{21C6F1BE-4D98-414D-AB38-A70D8DCF2FF9}</ProjectGuid>
+    <ProjectGuid>{29BC7CD2-78CB-443C-8E08-A5C971D43054}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>BasicReadTable.My.MyApplication</StartupObject>
-    <RootNamespace>BasicReadTable</RootNamespace>
-    <AssemblyName>BasicReadTable</AssemblyName>
+    <StartupObject>BasicDeleteRecord.My.MyApplication</StartupObject>
+    <RootNamespace>BasicDeleteRecord</RootNamespace>
+    <AssemblyName>BasicDeleteRecord</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
@@ -22,7 +22,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>BasicReadTable.xml</DocumentationFile>
+    <DocumentationFile>BasicDeleteRecord.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -32,7 +32,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>BasicReadTable.xml</DocumentationFile>
+    <DocumentationFile>BasicDeleteRecord.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -73,16 +73,8 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\AccessTester.vb" />
-    <Compile Include="Classes\DatabaseOperations.vb" />
-    <Compile Include="Classes\MyDialogs.vb" />
-    <Compile Include="Extensions\BindingSourceExtensions.vb" />
-    <Compile Include="FilterForm.Designer.vb">
-      <DependentUpon>FilterForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FilterForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Classes\Category.vb" />
+    <Compile Include="Classes\DataOperations.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -105,17 +97,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="TableNamesForm.Designer.vb">
-      <DependentUpon>TableNamesForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="TableNamesForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FilterForm.resx">
-      <DependentUpon>FilterForm.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
@@ -124,9 +107,6 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TableNamesForm.resx">
-      <DependentUpon>TableNamesForm.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -140,17 +120,13 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="readme.md" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Database1.accdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <Content Include="ForumQuestion.accdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\KarensBaseClasses\KarensBaseClasses.vbproj">
-      <Project>{9ded29f3-8dce-4e97-b051-f801e630a455}</Project>
-      <Name>KarensBaseClasses</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

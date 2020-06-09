@@ -2,6 +2,7 @@
 
 Namespace Forms
     Public Class frmMainForm
+        Public Event OnIterate As DelegatesModule.OnIterate
         WithEvents _bsData As New BindingSource
         ''' <summary>
         ''' Read data from backend database via DataAccess project,
@@ -121,13 +122,24 @@ Namespace Forms
                 f.Dispose()
             End Try
         End Sub
+        Dim somePictureBox As New PictureBox
         Private Sub cmdFlowLayout_Click(sender As Object, e As EventArgs) Handles cmdFlowLayout.Click
-            Dim f As New DemoFlowForm
+
+            'Dim converter As New ImageConverter
+            'Dim pBytes = CType(converter.ConvertTo(somePictureBox.Image, GetType(Byte())), Byte())
+
+            Dim f As New DemoFlowForm With {.Owner = Me}
             Try
-                f.ShowDialog()
+                f.Show()
+                'OnIterateEvent?.Invoke(New MonitorProgressArgs(6, pBytes))
+                OnIterateEvent?.Invoke(New MonitorProgressArgs(6, CType(_bsData.Current, DataRowView).Row.Field(Of Byte())("Picture")))
             Finally
-                f.Dispose()
+                'f.Dispose()
             End Try
+
+
+
         End Sub
+
     End Class
 End Namespace

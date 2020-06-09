@@ -21,6 +21,7 @@ Public Class DatabaseOperations
         Dim nameList As New List(Of String)
         Using cn As New OleDbConnection(ConnectionString)
             Using cmd As New OleDbCommand With {.Connection = cn}
+                Console.WriteLine(ConnectionString)
                 cmd.CommandText = "SELECT  CompanyName FROM Customers"
                 cn.Open()
                 Dim reader = cmd.ExecuteReader()

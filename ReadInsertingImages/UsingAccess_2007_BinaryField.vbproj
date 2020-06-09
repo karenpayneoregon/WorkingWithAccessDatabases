@@ -72,6 +72,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\ConversionModule.vb" />
+    <Compile Include="Classes\DelegatesModule.vb" />
+    <Compile Include="Classes\MonitorProgressArgs.vb" />
     <Compile Include="Forms\DemoFlow.Designer.vb">
       <DependentUpon>DemoFlow.vb</DependentUpon>
     </Compile>
