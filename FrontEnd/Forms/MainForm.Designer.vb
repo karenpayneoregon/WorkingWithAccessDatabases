@@ -25,6 +25,7 @@ Partial Class frmMainForm
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMainForm))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.companyNameTextBox = New System.Windows.Forms.TextBox()
         Me.cmdClose = New System.Windows.Forms.Button()
         Me.BindingNavigator1 = New System.Windows.Forms.BindingNavigator(Me.components)
         Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
@@ -40,7 +41,6 @@ Partial Class frmMainForm
         Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.companyNameTextBox = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BindingNavigator1.SuspendLayout()
@@ -56,6 +56,13 @@ Partial Class frmMainForm
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(525, 46)
         Me.Panel1.TabIndex = 2
+        '
+        'companyNameTextBox
+        '
+        Me.companyNameTextBox.Location = New System.Drawing.Point(25, 11)
+        Me.companyNameTextBox.Name = "companyNameTextBox"
+        Me.companyNameTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.companyNameTextBox.TabIndex = 4
         '
         'cmdClose
         '
@@ -189,13 +196,6 @@ Partial Class frmMainForm
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(525, 244)
         Me.DataGridView1.TabIndex = 1
-        '
-        'companyNameTextBox
-        '
-        Me.companyNameTextBox.Location = New System.Drawing.Point(25, 11)
-        Me.companyNameTextBox.Name = "companyNameTextBox"
-        Me.companyNameTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.companyNameTextBox.TabIndex = 4
         '
         'frmMainForm
         '

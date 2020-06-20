@@ -62,8 +62,19 @@
             MessageBox.Show($"Failed to load data: {ops.LastExceptionMessage}")
         End If
     End Sub
+    ''' <summary>
+    ''' Peek at changes if any
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub DataGridView1_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellEndEdit
+        Dim itemArrayValues = String.Join(",", CType(bsCustomers.Current, DataRowView).Row.ItemArray)
+        Console.WriteLine(itemArrayValues)
+    End Sub
     Private Sub cmdClose_Click(sender As System.Object, e As EventArgs) Handles cmdClose.Click
         Close()
     End Sub
+
+
 End Class
 
