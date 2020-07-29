@@ -25,6 +25,8 @@ Partial Class Form1
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.CompanyNameLikeButton = New System.Windows.Forms.Button()
+        Me.CompanyNameLikeTextBox = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.BindingNavigator1 = New System.Windows.Forms.BindingNavigator(Me.components)
         Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
@@ -38,8 +40,7 @@ Partial Class Form1
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
-        Me.CompanyNameLikeTextBox = New System.Windows.Forms.TextBox()
-        Me.CompanyNameLikeButton = New System.Windows.Forms.Button()
+        Me.ProcessButton = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -48,6 +49,7 @@ Partial Class Form1
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.ProcessButton)
         Me.Panel1.Controls.Add(Me.CompanyNameLikeButton)
         Me.Panel1.Controls.Add(Me.CompanyNameLikeTextBox)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
@@ -55,6 +57,23 @@ Partial Class Form1
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(604, 68)
         Me.Panel1.TabIndex = 0
+        '
+        'CompanyNameLikeButton
+        '
+        Me.CompanyNameLikeButton.Location = New System.Drawing.Point(32, 22)
+        Me.CompanyNameLikeButton.Name = "CompanyNameLikeButton"
+        Me.CompanyNameLikeButton.Size = New System.Drawing.Size(132, 23)
+        Me.CompanyNameLikeButton.TabIndex = 1
+        Me.CompanyNameLikeButton.Text = "Name like"
+        Me.CompanyNameLikeButton.UseVisualStyleBackColor = True
+        '
+        'CompanyNameLikeTextBox
+        '
+        Me.CompanyNameLikeTextBox.Location = New System.Drawing.Point(190, 24)
+        Me.CompanyNameLikeTextBox.Name = "CompanyNameLikeTextBox"
+        Me.CompanyNameLikeTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.CompanyNameLikeTextBox.TabIndex = 0
+        Me.CompanyNameLikeTextBox.Text = "the"
         '
         'DataGridView1
         '
@@ -167,22 +186,14 @@ Partial Class Form1
         Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
         Me.BindingNavigatorDeleteItem.Text = "Delete"
         '
-        'CompanyNameLikeTextBox
+        'ProcessButton
         '
-        Me.CompanyNameLikeTextBox.Location = New System.Drawing.Point(190, 24)
-        Me.CompanyNameLikeTextBox.Name = "CompanyNameLikeTextBox"
-        Me.CompanyNameLikeTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.CompanyNameLikeTextBox.TabIndex = 0
-        Me.CompanyNameLikeTextBox.Text = "the"
-        '
-        'CompanyNameLikeButton
-        '
-        Me.CompanyNameLikeButton.Location = New System.Drawing.Point(32, 22)
-        Me.CompanyNameLikeButton.Name = "CompanyNameLikeButton"
-        Me.CompanyNameLikeButton.Size = New System.Drawing.Size(132, 23)
-        Me.CompanyNameLikeButton.TabIndex = 1
-        Me.CompanyNameLikeButton.Text = "Name like"
-        Me.CompanyNameLikeButton.UseVisualStyleBackColor = True
+        Me.ProcessButton.Location = New System.Drawing.Point(517, 21)
+        Me.ProcessButton.Name = "ProcessButton"
+        Me.ProcessButton.Size = New System.Drawing.Size(75, 23)
+        Me.ProcessButton.TabIndex = 2
+        Me.ProcessButton.Text = "Process"
+        Me.ProcessButton.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -222,4 +233,5 @@ Partial Class Form1
     Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
     Friend WithEvents CompanyNameLikeTextBox As TextBox
     Friend WithEvents CompanyNameLikeButton As Button
+    Friend WithEvents ProcessButton As Button
 End Class

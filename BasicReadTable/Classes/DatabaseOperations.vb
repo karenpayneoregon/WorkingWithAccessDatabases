@@ -61,6 +61,9 @@ Public Class DatabaseOperations
 
                 Dim dt As New DataTable With {.TableName = "Customer"}
 
+                dt.Columns.Add(New DataColumn() With {.ColumnName = "Process", .DataType = GetType(Boolean), .DefaultValue = False})
+                dt.Columns("Process").SetOrdinal(0)
+
                 Try
                     cn.Open()
                     dt.Load(cmd.ExecuteReader)

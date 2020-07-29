@@ -34,4 +34,8 @@
             bsCustomers.Filter = $"CompanyName like '*{CompanyNameLikeTextBox.Text}*'"
         End If
     End Sub
+
+    Private Sub ProcessButton_Click(sender As Object, e As EventArgs) Handles ProcessButton.Click
+        DataGridView1.ExportRows("test.txt", "Process")
+    End Sub
 End Class

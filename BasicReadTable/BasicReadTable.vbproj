@@ -76,6 +76,7 @@
     <Compile Include="Classes\AccessTester.vb" />
     <Compile Include="Classes\DatabaseOperations.vb" />
     <Compile Include="Classes\MyDialogs.vb" />
+    <Compile Include="DataGridViewExtensions.vb" />
     <Compile Include="Extensions\BindingSourceExtensions.vb" />
     <Compile Include="FilterForm.Designer.vb">
       <DependentUpon>FilterForm.vb</DependentUpon>

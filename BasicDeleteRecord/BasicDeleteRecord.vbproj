@@ -124,7 +124,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ForumQuestion.accdb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup />
