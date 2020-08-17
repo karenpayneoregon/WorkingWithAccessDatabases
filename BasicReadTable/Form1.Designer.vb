@@ -25,6 +25,7 @@ Partial Class Form1
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.ProcessButton = New System.Windows.Forms.Button()
         Me.CompanyNameLikeButton = New System.Windows.Forms.Button()
         Me.CompanyNameLikeTextBox = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
@@ -40,7 +41,7 @@ Partial Class Form1
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
-        Me.ProcessButton = New System.Windows.Forms.Button()
+        Me.CurrentIdentifierButton = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -49,6 +50,7 @@ Partial Class Form1
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.CurrentIdentifierButton)
         Me.Panel1.Controls.Add(Me.ProcessButton)
         Me.Panel1.Controls.Add(Me.CompanyNameLikeButton)
         Me.Panel1.Controls.Add(Me.CompanyNameLikeTextBox)
@@ -57,6 +59,15 @@ Partial Class Form1
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(604, 68)
         Me.Panel1.TabIndex = 0
+        '
+        'ProcessButton
+        '
+        Me.ProcessButton.Location = New System.Drawing.Point(517, 21)
+        Me.ProcessButton.Name = "ProcessButton"
+        Me.ProcessButton.Size = New System.Drawing.Size(75, 23)
+        Me.ProcessButton.TabIndex = 2
+        Me.ProcessButton.Text = "Process"
+        Me.ProcessButton.UseVisualStyleBackColor = True
         '
         'CompanyNameLikeButton
         '
@@ -186,14 +197,14 @@ Partial Class Form1
         Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
         Me.BindingNavigatorDeleteItem.Text = "Delete"
         '
-        'ProcessButton
+        'CurrentIdentifierButton
         '
-        Me.ProcessButton.Location = New System.Drawing.Point(517, 21)
-        Me.ProcessButton.Name = "ProcessButton"
-        Me.ProcessButton.Size = New System.Drawing.Size(75, 23)
-        Me.ProcessButton.TabIndex = 2
-        Me.ProcessButton.Text = "Process"
-        Me.ProcessButton.UseVisualStyleBackColor = True
+        Me.CurrentIdentifierButton.Location = New System.Drawing.Point(422, 22)
+        Me.CurrentIdentifierButton.Name = "CurrentIdentifierButton"
+        Me.CurrentIdentifierButton.Size = New System.Drawing.Size(75, 23)
+        Me.CurrentIdentifierButton.TabIndex = 3
+        Me.CurrentIdentifierButton.Text = "Current Id"
+        Me.CurrentIdentifierButton.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -234,4 +245,5 @@ Partial Class Form1
     Friend WithEvents CompanyNameLikeTextBox As TextBox
     Friend WithEvents CompanyNameLikeButton As Button
     Friend WithEvents ProcessButton As Button
+    Friend WithEvents CurrentIdentifierButton As Button
 End Class
