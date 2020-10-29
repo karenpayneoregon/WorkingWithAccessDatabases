@@ -1,11 +1,11 @@
 ﻿Imports System.Data.OleDb
 Imports System.IO
-Imports BaseConnectionLibrary.ConnectionClasses
+Imports BaseConnectionLibrary.ConnectionClasses ' NuGet package
 
 Namespace Classes
 
     Public Class DatabaseOperations
-        Inherits AccessConnection
+        Inherits AccessConnection ' NuGet package for connection string
 
         ''' <summary>
         ''' Default our connection to a database in the executable folder when not using a password
@@ -18,7 +18,6 @@ Namespace Classes
         End Sub
 
         Public Function LoadOrders(companyName As String, startDate As Date, endDate As Date) As DataTable
-
 
             Using cn As New OleDbConnection(ConnectionString)
                 Using cmd As New OleDbCommand With {.Connection = cn}
