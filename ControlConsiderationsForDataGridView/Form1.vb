@@ -1,4 +1,7 @@
-﻿Public Class Form1
+﻿Imports ControlConsiderationsForDataGridView.Classes
+Imports ControlConsiderationsForDataGridView.Extensions
+
+Public Class Form1
     Private bsCustomers As New BindingSource
     Private Sub Form1_Shown(sender As Object, e As EventArgs) Handles Me.Shown
         Dim ops As New DatabaseOperations
@@ -56,7 +59,7 @@
         If DataGridView1.CurrentCell.IsComboBoxCell() Then
             If DataGridView1.Columns(DataGridView1.CurrentCell.ColumnIndex).Name = "ContactTitleDataGridViewColumn" Then
 
-                Dim comboBox = TryCast(e.Control, ComboBox)
+                Dim comboBox = CType(e.Control, ComboBox)
 
                 RemoveHandler comboBox.SelectionChangeCommitted, AddressOf _SelectionChangeCommittedForColorColumn
                 AddHandler comboBox.SelectionChangeCommitted, AddressOf _SelectionChangeCommittedForColorColumn

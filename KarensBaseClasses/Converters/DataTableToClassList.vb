@@ -23,7 +23,7 @@ Public Module DataTableToClassList
     ''' <typeparam name="T"></typeparam>
     ''' <param name="dr"></param>
     ''' <returns></returns>
-    Private Function GetItem(Of T)(ByVal dr As DataRow) As T
+    Private Function GetItem(Of T)(dr As DataRow) As T
         Dim temp As Type = GetType(T)
         Dim obj As T = Activator.CreateInstance(Of T)()
 
