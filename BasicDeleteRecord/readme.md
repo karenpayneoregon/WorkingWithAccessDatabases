@@ -4,4 +4,6 @@ Simple example for removal of a selected item from a ComboBox loaded from a data
 
 Altough a ComboBox is used with a list the underlying code can be adapted to a DataTable and other controls like a DataGridView.
 
+**Important** Button1 should not be used, it's here from another forum question.
+
 > Also shows [INotifyPropertyChanged](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.inotifypropertychanged?view=netcore-3.1) which permits updating for instance in the ComboBox from a [BindingList](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.bindinglist-1?view=netcore-3.1)
